@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/openclinicga-master" >
+    
+    <Resource name="openclinic" auth="Container" type="javax.sql.DataSource"
+            maxActive="100" maxIdle="120000" maxWait="1000"
+            username="openclinic" password="0pen" driverClassName="com.mysql.jdbc.Driver"
+            url="jdbc:mysql://localhost:13306/openclinic_dbo"/>
+    
+     <Resource name="longopenclinic" auth="Container" type="javax.sql.DataSource"
+            maxActive="100" maxIdle="1200000" maxWait="1000"
+            username="openclinic" password="0pen" driverClassName="com.mysql.jdbc.Driver"
+            url="jdbc:mysql://localhost:13306/openclinic_dbo"/>
+     
+     <Resource name="admin" auth="Container" type="javax.sql.DataSource"
+            maxActive="100" maxIdle="120000" maxWait="1000"
+            username="openclinic" password="0pen" driverClassName="com.mysql.jdbc.Driver"
+            url="jdbc:mysql://localhost:13306/ocadmin_dbo"/>
+     
+     <Resource name="longadmin" auth="Container" type="javax.sql.DataSource"
+            maxActive="100" maxIdle="1200000" maxWait="1000"
+            username="openclinic" password="0pen" driverClassName="com.mysql.jdbc.Driver"
+            url="jdbc:mysql://localhost:13306/ocadmin_dbo"/>
+	
+      <Resource name="stats" auth="Container" type="javax.sql.DataSource"
+            maxActive="100" maxIdle="120000" maxWait="1000"
+            username="openclinic" password="0pen" driverClassName="com.mysql.jdbc.Driver"
+            url="jdbc:mysql://localhost:13306/ocastats_dbo"/>
+
+                
+                               
+</Context>
+
+ 
+    
