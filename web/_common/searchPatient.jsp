@@ -64,13 +64,13 @@
     }
 %>
 
-<table width="90%" onKeyDown='checkKeyDown(event);'>
-    <form name="SF" method='post' action="<c:url value='/patientslist.do'/>?ts=<%=getTs()%>" id="SF">
+ <form name="SF" method='post' action="<c:url value='/patientslist.do'/>?ts=<%=getTs()%>" id="SF">
         <input type="hidden" name="RSIndex">
         <input type="hidden" name="ListAction">
         <input type="hidden" name="findSearchButtonClick">
         
-        <%-- row 1 --%>
+<table width="90%" onKeyDown='checkKeyDown(event);'>
+       <%-- row 1 --%>
         <tr>
             <td align="right" nowrap width="55"><%=getTran("Web","Name",sWebLanguage)%></td>
             <td>

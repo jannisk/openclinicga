@@ -254,6 +254,8 @@
                       if(daysLeftTillNotice <= 0){
                           // the user may perform all actions, but first sees the passwordscreen
                     	  ad_conn.close();
+                          String contextPath = request.getContextPath();
+                          String aPage = response.encodeRedirectURL(contextPath + "Page=/userprofile/changepassword.jsp&popup=yes&daysLeft="+(int)daysLeftTillAvail+"&ts="+getTs()); 
                           response.sendRedirect("main.do?Page=userprofile/changepassword.jsp&popup=yes&daysLeft="+(int)daysLeftTillAvail+"&ts="+getTs());
                       }
                   }

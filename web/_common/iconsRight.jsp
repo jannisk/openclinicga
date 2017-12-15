@@ -29,7 +29,6 @@
                 
                 while(menuElems.hasNext()){
                 	tmpMenuElem = (Element)menuElems.next();
-
                 	if(checkString(tmpMenuElem.attributeValue("labelid")).equalsIgnoreCase(pathParts[menuDepth])){
                 		menuDepth++;
                 		
@@ -67,7 +66,6 @@
         
         while(menuElems.hasNext()){
         	tmpMenuElem = (Element)menuElems.next();
-
         	if(checkString(tmpMenuElem.attributeValue("labelid")).equalsIgnoreCase(pathParts[menuDepth])){
         		menuDepth++;
         		
@@ -98,18 +96,15 @@
     //--- 1 - USER DEFINED ICONS ------------------------------------------------------------------
     String sIconsDir = sAPPFULLDIR+"/_img/shortcutIcons";
     Vector userParameters = activeUser.getUserParametersByType(activeUser.userid,"usershortcut$");
-
     Element menuElem;
     String sLongLabelId, sIconName, sIconOnClick, sIconText = "", sLabelType, sShortcutTitle;
     UserParameter userParameter;
-
     //Debug.println("\n***** userShortcuts (userid:"+activeUser.userid+") : "+userParameters.size()+" *****");
     for(int i=0; i<userParameters.size(); i++){
         userParameter = (UserParameter)userParameters.get(i);
         //Debug.println("\nuserShortcut : "+userParameter.getParameter());
         
         sLongLabelId = userParameter.getParameter().substring("usershortcut$".length());
-
         // parse 'parameter' of parameter
        	String[] iconTypes = userParameter.getParameter().split("\\$");
         String sSubtype = "";
@@ -124,7 +119,6 @@
        	if(iconValues.length > 2){
             sIconText = iconValues[2];
        	}
-
         /*
         /// DEBUG /////////////////////////////////////////////////////////////
        	if(Debug.enabled){
@@ -149,7 +143,6 @@
        	//*** fetch extra data from xml (accessrights and such) ***
        	boolean okToDisplayIcon = false;
     	menuElem = getMenuElement(session,sLongLabelId);
-
        	if(menuElem!=null){
             // look for required permissions
            	//Debug.println("accessrights : "+checkString(menuElem.attributeValue("accessrights")));
@@ -175,7 +168,6 @@
 	                okToDisplayIcon = patientSelected;
 	            }
        		}
-
             // continue checking requirements
        		if(okToDisplayIcon){
 	       		// check wether employee is selected when the xml-menu-item demands it
@@ -192,16 +184,13 @@
        	else{
        		//Debug.println("menuElem '"+sLongLabelId+"' not found in menu.xml");
        	}
-
    		//Debug.println("--> okToDisplayIcon : "+okToDisplayIcon);
        	if(okToDisplayIcon){
             %><img class="link" src="<%=sCONTEXTPATH%>/_img/shortcutIcons/<%=sIconName%>" onClick="<%=sIconOnClick%>" title="<%=sIconText%>" style="width:16px;height:16px;"/>&nbsp;<%
        	}
     } 
-
     //--- 2 - DEFAULT SYSTEM ICONS ---------------------------------------------------------------- 
     String sPage = checkString(request.getParameter("Page")).toLowerCase();
-
     boolean bMenu = false;
     if((activePatient!=null) && (activePatient.lastname!=null) && (activePatient.personid.trim().length()>0)){
         if(!sPage.equals("patientslist.jsp")){
@@ -299,7 +288,7 @@
         %>
             <img class="link" onclick="clickMenuItem('javascript:searchMyVisits();');" title="<%=getTranNoLink("Web","my_on_visit_patients",sWebLanguage)%>" src="<c:url value='/_img/icons/icon_visits.png'/>"/>
             <img class="link" onclick="doPrint();" title="<%=getTranNoLink("Web","Print",sWebLanguage)%>" src="<c:url value='/_img/icons/icon_print.gif'/>" />
-            <img class="link" id="ddIconAgenda" onclick="clickMenuItem('<c:url value='/main.do'/>?Page=planning/findPlanning.jsp&ts='+new Date().getTime());" title="<%=getTranNoLink("Web","Planning",sWebLanguage)%>" src="<c:url value='/_img/icons/icon_calendar.gif'/>"/>
+            <img class="link" id="ddIconAgenda" onclick="clickMenuItem('<c:url value= '/main.do'/>?Page=planning/findPlanning.jsp&ts='+new Date().getTime());" title="<%=getTranNoLink("Web","Planning",sWebLanguage)%>" src="<c:url value='/_img/icons/icon_calendar.gif'/>"/>
         <%
         
         String sHelp = MedwanQuery.getInstance().getConfigString("HelpFile");
