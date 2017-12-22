@@ -31,6 +31,7 @@ public class ContextInitializationFilter implements Filter {
                          javax.servlet.FilterChain filterChain) throws java.io.IOException, ServletException {
 
         try {
+
             initializeContext(request);
             filterChain.doFilter(request, response);
         }

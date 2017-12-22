@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 public class LogoutAction extends Action{
 
   //--- EXCECUTE ----------------------------------------------------------------------------------
+  @Override
   public ActionForward perform(
                      ActionMapping mapping,
                      ActionForm form,

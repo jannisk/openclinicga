@@ -8,7 +8,7 @@
 %>
 <html>
 <head>
-    <META HTTP-EQUIV="Refresh" CONTENT="5;url=<%=sCONTEXTPATH%>/<%=sTmpAPPDIR%>">
+    <META HTTP-EQUIV="Refresh" CONTENT="5; url=<%=sCONTEXTPATH%>/<%=sTmpAPPDIR%>">
     <%=sCSSNORMAL%>
     <%=sJSCOOKIE%>
     <%=sJSDROPDOWNMENU%>
